@@ -1,12 +1,12 @@
 import logo from './logo.svg';
 import './App.css';
-import File from './fetch'
 import Card from './card';
+import Otp from './Structure/mobileotp';
 
 function App() {
   return (
     <div className="App">
-      <Card/>
+      <Otp />
     </div>
   );
 }

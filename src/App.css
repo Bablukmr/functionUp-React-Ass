@@ -3,29 +3,17 @@
   text-align: center;
 }
 
-.card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  border: 1px solid black;
+
+input{
   border-radius: 5px;
-  padding: 10px;
-  margin: 10px;
-  width: 200px;
-  box-shadow: 2px 2px 5px rgba(113, 89, 89, 0.3);
-  background-color: antiquewhite;
+height: 30px;
+width: 300px;
+background-color: bisque;
 }
-
-img {
-  display: inline-block;
-  max-width: 100%;
-  border-radius: 50%;
-}
-
 button{
   width: 100px;
   height: 30px;
-  margin-top: 50px;
+  margin: 10px;
   background-color: rgb(167, 124, 124);
   border-radius: 10px;
 }

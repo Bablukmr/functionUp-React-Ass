@@ -4,19 +4,16 @@
 }
 
 
+input{
+  border-radius: 5px;
+height: 30px;
+width: 300px;
+background-color: bisque;
+}
 button{
   width: 100px;
   height: 30px;
   margin: 10px;
   background-color: rgb(167, 124, 124);
   border-radius: 10px;
-}
-
-.AXIOS{
- display: list-item;
-}
-img{
-
-  border-radius: 50%;
-
 }

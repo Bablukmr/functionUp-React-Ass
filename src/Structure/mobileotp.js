@@ -1,6 +1,5 @@
-
 import React, { useState } from "react";
-
+import axios from "axios";
 
 function Otp() {
   const [mobileNumber, setMobileNumber] = useState("");
@@ -12,34 +11,38 @@ function Otp() {
   };
 
   const handleSendOtpClick = async () => {
-   
     const mobileRegex = /^[6-9]\d{9}$/;
     if (!mobileRegex.test(mobileNumber)) {
       setOtpError("Please enter a valid 10 digit Indian mobile number.");
       return;
     }
 
-    
     const body = { mobile: mobileNumber };
-    const response = await fetch("https://cdn-api.co-vin.in/api/v2/auth/public/generateOTP",
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify(body)
-      }
-    );
+    try {
+      const response = await axios.post(
+        "https://cdn-api.co-vin.in/api/v2/auth/public/generateOTP",
+        body,
 
-    if (response.ok) {
-      setOtpSent(true);
-      setOtpError("");
-      setMobileNumber("");
-    } else {
-      
-      const errorResponse = await response.json();
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
+
+      if (response.status === 200) {
+        setOtpSent(true);
+        setOtpError("");
+        setMobileNumber("");
+      } else {
+        setOtpSent(false);
+        setOtpError("Failed to send OTP. Please try again later.");
+      }
+    } catch (error) {
       setOtpSent(false);
-      setOtpError(errorResponse.error);
+      setOtpError(
+        error.response?.data?.error || "Failed to send OTP. Please try again later."
+      );
     }
   };
 

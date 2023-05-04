@@ -1,12 +1,12 @@
 import logo from './logo.svg';
 import './App.css';
-import Card from './card';
-import Otp from './Structure/mobileotp';
+import Axios from './Structure/Axios';
+
 
 function App() {
   return (
     <div className="App">
-      <Otp />
+      <Axios />
     </div>
   );
 }

@@ -1,11 +1,18 @@
 import './Header.css'
 import { CgClose, CgMenu,CgGlobeAlt,CgOrganisation } from "react-icons/cg";
 import React, { useState } from "react";
+import { Link } from 'react-router-dom';
 
 export default function Header() {
 
     const [isMobile, setIsMobile] = useState(true)
+function handaleMobile(){
+setIsMobile(false)
+}
+function handleClose(){
+    setIsMobile(true)
 
+}
     return (
         <>
             <nav>
@@ -14,43 +21,32 @@ export default function Header() {
                <CgOrganisation className='icon1'/>
                 </div>
                 <div className='menue-link'>
+                    
                     <ul className={isMobile ?'navbar':'menue-link-mobile'}>
+                    <CgClose onClick={handleClose} className='closebox'/>
                         <li>
-                            <a href='/'>Home</a>
+                            <Link to='/'>Home</Link>
                         </li>
                         <li>
-                            <a href='/about'>About</a>
+                            <Link to='/about'>AboutUs</Link>
                         </li>
                         <li>
-                            <a href='/project' >Project</a>
+                            <Link to='/register' >Register</Link>
                         </li>
                         <li>
-                            <a href='/videos'>Videos</a>
+                            <Link to='/videos'>Videos</Link>
                         </li>
                         <li>
-                            <a href='contact'>Contact</a>
+                            <Link to='contact'>Contact</Link>
                         </li>
-                        <button>login</button>
+                     <button >  <Link to='/login' style={{color:'black'}}> login</Link></button>
                     </ul>
-                    <CgMenu className='menue' onClick={()=>(!isMobile)} />
+                    <CgMenu className='menue' onClick={handaleMobile} />
                 </div>
 
             </nav>
 
-            <div className="hero-section">
-                <div className="hero-content">
-                    
-                    <div className="hero-text">
-                        <h1>We There</h1>
-                        <h3>devever brilliant messages in the moment that truly define your brand.</h3>
-                        <button className="hero-button">More</button>
-                    </div>
-                    <div className="hero-image">
-                        <img src="https://images.unsplash.com/photo-1683222044051-bf429ee34d63?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwxNzZ8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60" alt="Hero" />
-                    </div>
-                </div>
-            </div>
-
+            
         </>
     )
 }

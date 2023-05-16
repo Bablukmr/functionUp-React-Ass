@@ -1,16 +1,4 @@
 
-a{
-    text-decoration:none;
-    color: white
-}
-.icon{
-  font-size: 40px;
-  color: wheat;
-}
-.icon1{
-    font-size: 40px;
-  color: rgb(157 46 46);
-}
 nav{
 display: flex;
 align-items: center;
@@ -18,12 +6,29 @@ justify-content: space-between;
 background-color: rgb(95, 25, 214);
 padding: 20px 80px ;
 box-shadow: 0 5px 15px;
+z-index:99;
 
 }
 .navbar{
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+a{
+  text-decoration:none;
+  color: white
+}
+.icon{
+font-size: 40px;
+color: wheat;
+}
+.icon1{
+  font-size: 40px;
+color: rgb(157 46 46);
+}
+.closebox{
+display: none;
 }
 .navbar li{
     list-style-type: none;
@@ -52,6 +57,16 @@ button{
 display: none;
 }
 
+.menue-link-mobile{
+  display: block;
+  position: absolute;
+  font-size: 30px;
+  background-color: rgb(94, 39, 171);
+  border: none;
+ margin: 15px;
+ z-index: 100;
+ text-decoration:none;
+}
 
  @media screen and (max-width:850px) {
    .navbar{
@@ -60,17 +75,14 @@ display: none;
 .menue{
     display:block;
 }
-.menue-link-mobile{
-    display: block;
-    position: absolute;
-    font-size: 30px;
-    background-color: rgb(94, 39, 171);
-    border: none;
-    top: 15px;
+.closebox{
+  display: unset;
 }
+
 .hero-content{
     display:flexbox;
 }
+
 
 }
 
@@ -93,6 +105,7 @@ display: none;
   
   .hero-text {
     flex: 1;
+
   }
   
   .hero-text h1 {

@@ -1,0 +1,27 @@
+.mainbox {
+    margin: 5%;
+  
+    height: 85vh;
+    justify-content: center;
+  }
+  form {
+    margin-top: 40vh;
+  }
+  .contents {
+    display: flex;
+    margin: 10px;
+  }
+  button {
+    margin: 20px;
+    background-color: red;
+    width: 90px;
+    border-radius: 8px;
+  }
+  input {
+    height: 35px;
+    width: 200px;
+    padding: 5px;
+    padding-left: 20px;
+    border-radius: 10px;
+  }
+  

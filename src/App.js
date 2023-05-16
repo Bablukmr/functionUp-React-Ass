@@ -1,18 +1,12 @@
 import logo from './logo.svg';
 import './App.css';
-import Header from './Components/Header';
-import ScrollBar from './Components/ScrollBar/ScrollBar';
-import TicTac from './Components/tic-tac-toe-game/ticTac';
-import TodoList from './Components/Atomic-Structure/to-do';
+import RemoveUser from './Components/remove-user/removeUser';
 
 
 function App() {
   return (
     <div className="App">
-      {/* <Header/> */}
-      {/* <ScrollBar/> */}
-      {/* <TicTac/> */}
-      <TodoList/>
+   <RemoveUser/>
     </div>
   );
 }

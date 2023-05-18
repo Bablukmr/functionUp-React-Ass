@@ -1,3 +1,4 @@
+//After adding Timer in sending on github (i comment that because of i commit it before thats why please ignore that comment)
 
 export const QuizData = [
     {

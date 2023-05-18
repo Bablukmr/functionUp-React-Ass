@@ -1,8 +1,10 @@
 
+
 import React from 'react'
 
 export default function QuizResult(props) {
     return (
+        
         <>
             <div style={{ margin: '5vh 5vw' }} >
                 <h2> Your Score: {props.score}</h2>

@@ -1,3 +1,4 @@
+
 import React, { useEffect, useState } from 'react'
 import { QuizData } from './QuizData'
 import './Quiz.css'
@@ -14,23 +15,22 @@ export default function Quiz() {
 
 
     useEffect(() => {
-        // Start the timer
+
         const timer = setInterval(() => {
             setTimeRemaining((prevTime) => prevTime - 1);
         }, 1000);
 
-        // Check if time has run out
+
         if (timeRemaining === 0) {
             clearInterval(timer);
             handleTimeUp();
         }
 
-        // Clean up the timer on component unmount
         return () => clearInterval(timer);
     }, [timeRemaining]);
 
     function handleTimeUp() {
-        setSubmitButton(10); // Set submitButton to a value that will trigger showResult
+        setSubmitButton(10);
         SetShowResult(true);
     }
 
@@ -58,6 +58,7 @@ export default function Quiz() {
         setScore(0);
         setTimeRemaining(60);
     }
+
 
     return (
         <>
